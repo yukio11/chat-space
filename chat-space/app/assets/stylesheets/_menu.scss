@@ -1,4 +1,16 @@
 .menu {
+  width: 260px;
+  height: 100vh;
+  float: left;
+  color: #FFFFFF;
   background-color: #2f3e51;
-  width: 300px;
+
+  .menu__title{
+    background-color: #253141;
+  }
+
+  .menu__content{
+
+  }
 }
+

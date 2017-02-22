@@ -1,4 +1,56 @@
 .chat {
-  background-color: #AAAAAA;
-  width: 300px;
+  width: calc(100vw - 300px);
+  height: 100vh;
+  float: right;
+
+  .chat__title{
+    padding: 35px 40px 15px;
+    height: 82px;
+    .title__info{
+      float: left;
+      h1{
+        font-size: 20px;
+        color: #333333;
+      }
+      p.title__members{
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+    div.title__edit{
+      float: right;
+      height: 40px;
+      padding: 0px 20px;
+      margin-top: 28px;
+      border: solid;
+      border-color: #38AEF0;
+      p{
+        margin-top: 10px;
+        color: #38AEF0;
+      }
+    }
+  }
+
+  .chat__content{
+    background-color: #EEEEEE;
+    border-style:solid;
+    border-color: #DDDDDD;
+    padding:46px 40px;
+
+    .msg{
+      padding-bottom: 40px;
+      p.msg__username{
+        margin-right: 10px;
+      }
+    }
+    form{
+      margin: 20px 0px;
+      .form__textfield{
+        padding-left: 10px;
+      }
+      .form__submit{
+        background-color: #38AEF0;
+      }
+    }
+  }
 }

@@ -1,2 +1,53 @@
-%menu
-%chat
+%wrapper
+
+  %div.info
+    %p.info__msg チャットグループが作成されました。
+
+  %div.menu
+    %div.menu__title
+      %h2 ryosukemaehira
+      %i.fa.fa-pencil-square-o
+      %i.fa.fa-cog
+
+    %div.menu__content
+      %div.group
+        %p.group__name 神
+        %p.group__msg iiiii
+      %div.group
+        %p.group__name aaaaaaaa
+        %p.group__msg まだメッセージはありません
+      %div.group
+        %p.group__name sampleグループ
+        %p.group__msg まだメッセージはありません
+
+  %div.chat
+    %div.chat__title
+      %div.title__info
+        %h1.title__name sampleグループ
+        %p.title__members Member:ryosukemaehira
+      %div.title__edit
+        %a
+          %p EDIT
+
+    %div.chat__content
+      %div.msg
+        %p.msg__username ryosukemaehira
+        %p.msg__time 2016/10/02 06:27:07
+        %p.msg__passage なるほど
+      %div.msg
+        %p.msg__username ryosukemaehira
+        %p.msg__time 2016/10/02 06:27:14
+        %p.msg__passage 水色きもい
+      %div.msg
+        %p.msg__username ryosukemaehira
+        %p.msg__time 2016/10/02 06:27:25
+        %p.msg__passage command Enter で送信したい感ある
+      %div.msg
+        %p.msg__username ryosukemaehira
+        %p.msg__time 2016/10/02 06:27:30
+        %p.msg__passage お腹すいた
+
+      %form
+        %input.form__textfield{ :type => "text" }
+        %i.fa.fa-picture-o
+        %input.form__submit{ :type => "submit"}
