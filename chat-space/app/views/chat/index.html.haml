@@ -6,8 +6,8 @@
   %div.menu
     %div.menu__title
       %h2 ryosukemaehira
-      %i.fa.fa-pencil-square-o
-      %i.fa.fa-cog
+      %i.fa.fa-pencil-square-o.fa-2x
+      %i.fa.fa-cog.fa-2x
 
     %div.menu__content
       %div.group
@@ -46,8 +46,12 @@
         %p.msg__username ryosukemaehira
         %p.msg__time 2016/10/02 06:27:30
         %p.msg__passage お腹すいた
+      %div.space
 
       %form
-        %input.form__textfield{ :type => "text" }
-        %i.fa.fa-picture-o
-        %input.form__submit{ :type => "submit"}
+        %span
+          %input.form__textfield{ :type => "text" ,:placeholder => "type a message", :style =>"width:calc(100% - 200px);height:50px" }
+        %span
+          %i.fa.fa-picture-o
+        %span
+          %input.form__submit{ :type => "submit", :value => "SEND", :style =>"width:70px;height:50px"}
