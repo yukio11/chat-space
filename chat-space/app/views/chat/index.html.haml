@@ -6,8 +6,8 @@
   %div.menu
     %div.menu__title
       %h2 ryosukemaehira
-      %i.fa.fa-pencil-square-o.fa-2x
-      %i.fa.fa-cog.fa-2x
+      = icon('pencil-square-o', class: 'fa-2x')
+      = icon('cog', class: 'fa-2x')
 
     %div.menu__content
       %div.group
@@ -52,6 +52,6 @@
         %span
           %input.form__textfield{ :type => "text" ,:placeholder => "type a message", :style =>"width:calc(100% - 200px);height:50px" }
         %span
-          %i.fa.fa-picture-o
+          = icon('picture-o')
         %span
           %input.form__submit{ :type => "submit", :value => "SEND", :style =>"width:70px;height:50px"}
