@@ -10,6 +10,8 @@ module ChatSpace
   class Application < Rails::Application
     config.generators do |g|
       g.coffee     false
+      g.test       false
+      g.helper     false
     end
   end
 end
