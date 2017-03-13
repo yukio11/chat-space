@@ -9,8 +9,8 @@ Bundler.require(*Rails.groups)
 module ChatSpace
   class Application < Rails::Application
     config.generators do |g|
-      g.coffee     false
-      g.test       false
+      g.javascripts     false
+      g.test_framework       false
       g.helper     false
     end
   end
