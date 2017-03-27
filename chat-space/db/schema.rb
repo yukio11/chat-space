@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327095742) do
+ActiveRecord::Schema.define(version: 20170327113652) do
 
   create_table "group_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "group_id"
-    t.integer  "user_id"
+    t.integer  "group_id",   null: false
+    t.integer  "user_id",    null: false
     t.index ["group_id"], name: "index_group_users_on_group_id", using: :btree
     t.index ["user_id"], name: "index_group_users_on_user_id", using: :btree
   end
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20170327095742) do
     t.string   "image"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.integer  "group_id"
-    t.integer  "user_id"
+    t.integer  "group_id",                 null: false
+    t.integer  "user_id",                  null: false
     t.index ["body"], name: "index_messages_on_body", length: { body: 140 }, using: :btree
     t.index ["group_id"], name: "index_messages_on_group_id", using: :btree
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
