@@ -19,7 +19,7 @@ has_many :groups, through: :group_users
 
 | *カラム* | *データ型* | *NOT NULL制約* | *一意性制約* | *外部キー制約* | *INDEX* |
 |:-----------|------------:|:------------:|:-----------|------------:|:------------:|
-| name | string | ○ | ○ | - | ○ |
+| name | string | ○ | ○ | - | × |
 
 ```
   has_many :messages
