@@ -1,24 +1,54 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## データベース設計
 
-Things you may want to cover:
+### usersテーブル（deviseで実装）
 
-* Ruby version
+| *カラム* | *データ型* | *NOT NULL制約* | *一意性制約* | *外部キー制約* | *INDEX* |
+|:-----------|------------:|:------------:|:-----------|------------:|:------------:|
+| name | string | ○ | ○ | - | ○ |
+| email | string | ○ | ○ | - | ○ |
+| password | string | ○ | × | - | ○ |
 
-* System dependencies
+```
+has_many :messages
+has_many :groups, through: :group_users
+```
 
-* Configuration
+### groupsテーブル
 
-* Database creation
+| *カラム* | *データ型* | *NOT NULL制約* | *一意性制約* | *外部キー制約* | *INDEX* |
+|:-----------|------------:|:------------:|:-----------|------------:|:------------:|
+| name | string | ○ | ○ | - | × |
 
-* Database initialization
+```
+  has_many :messages
+  has_many :users, through: :group_users
+```
 
-* How to run the test suite
+### group_usersテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| *カラム* | *データ型* | *NOT NULL制約* | *一意性制約* | *外部キー制約* | *INDEX* |
+|:-----------|------------:|:------------:|:-----------|------------:|:------------:|
+| group_id | references | ○ | × | ○ | ○ |
+| user_id | references | ○ | × | ○ | ○ |
 
-* Deployment instructions
+```
+  belongs_to :group
+  belongs_to :user
+```
 
-* ...
+### messagesテーブル
+
+| *カラム* | *データ型* | *NOT NULL制約* | *一意性制約* | *外部キー制約* | *INDEX* |
+|:-----------|------------:|:------------:|:-----------|------------:|:------------:|
+| body | text | × | × | - | × |
+| image | string | ○ | × | - | × |
+| group_id | references | ○ | × | ○ | ○ |
+| user_id | references | ○ | × | ○ | ○ |
+
+
+```
+  belongs_to :user
+  belongs_to :group
+```
