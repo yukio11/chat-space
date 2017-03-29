@@ -42,7 +42,7 @@ has_many :groups, through: :group_users
 
 | *カラム* | *データ型* | *NOT NULL制約* | *一意性制約* | *外部キー制約* | *INDEX* |
 |:-----------|------------:|:------------:|:-----------|------------:|:------------:|
-| body | text | × | × | - | ○ |
+| body | text | × | × | - | × |
 | image | string | ○ | × | - | × |
 | group_id | references | ○ | × | ○ | ○ |
 | user_id | references | ○ | × | ○ | ○ |
