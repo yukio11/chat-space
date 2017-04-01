@@ -189,6 +189,7 @@ DEPENDENCIES
   devise
   font-awesome-sass (~> 4.7.0)
   haml-rails (~> 0.9)
+  i18n
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
