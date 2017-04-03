@@ -2,7 +2,7 @@
 
   %div.menu
     %div.menu__title
-      %h2 ryosukemaehira
+      %h2 #{@user}
       = icon('pencil-square-o', class: 'fa-2x')
       = link_to (edit_user_registration_path method: :get) do
         %i{class:"fa fa-cog fa-2x fa-white"}
