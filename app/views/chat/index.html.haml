@@ -3,7 +3,8 @@
   %div.menu
     %div.menu__title
       %h2 #{@user.name}
-      = icon('pencil-square-o', class: 'fa-2x')
+      = link_to (new_group_path method: :get) do
+        %i{class:"fa fa-pencil-square-o fa-2x fa-white"}
       = link_to (edit_user_registration_path method: :get) do
         %i{class:"fa fa-cog fa-2x fa-white"}
 
