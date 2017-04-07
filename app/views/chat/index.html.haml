@@ -3,9 +3,9 @@
   %div.menu
     %div.menu__title
       %h2 #{@user.name}
-      = link_to (new_group_path method: :get) do
+      = link_to new_group_path method: :get do
         %i{class:"fa fa-pencil-square-o fa-2x fa-white"}
-      = link_to (edit_user_registration_path) do
+      = link_to edit_user_registration_path do
         %i{class:"fa fa-cog fa-2x fa-white"}
 
     %div.menu__content
