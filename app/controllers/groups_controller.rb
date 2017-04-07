@@ -1,4 +1,7 @@
 class GroupsController < ApplicationController
+
+  before_action :set_group, only:[:edit, :update]
+
   def show
     @group = Group.find(params[:id])
   end
@@ -17,11 +20,9 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    set_group
   end
 
   def update
-    set_group
     @group.update(group_params)
     if @group.save
       redirect_to group_path(@group), notice:"グループの更新が完了しました。"
