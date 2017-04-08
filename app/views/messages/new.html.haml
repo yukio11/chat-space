@@ -1,4 +1,2 @@
-= form_for ([@group, @message]) do |f|
-  = f.text_field :body, autofocus: true
-  = f.text_field :image
-  = f.submit "Submit"
+%h2 フォーム投稿
+= render "form"
