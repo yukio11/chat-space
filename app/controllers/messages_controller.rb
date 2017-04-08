@@ -14,14 +14,16 @@ before_action :set_message, only: [:edit, :update]
   end
 
   def create
-    Message.create(message_params)
+    @message = Message.create(message_params)
+    redirect_to group_messages_path
   end
 
   def edit
   end
 
   def update
-    @message.update(message_params)
+    @message = @message.update(message_params)
+    redirect_to group_messages_path
   end
 
   def delete
