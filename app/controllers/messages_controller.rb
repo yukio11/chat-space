@@ -14,7 +14,7 @@ before_action :set_message, only: [:edit, :update]
   end
 
   def create
-    @group = Message.create(message_params)
+    Message.create(message_params)
   end
 
   def edit
