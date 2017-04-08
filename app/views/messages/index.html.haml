@@ -1,0 +1,6 @@
+%h2 メッセージ一覧
+- @messages.each do |message|
+  .msg
+    = message.user.name
+    = message.body
+    = message.updated_at
