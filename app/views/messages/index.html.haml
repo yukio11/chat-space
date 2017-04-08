@@ -3,6 +3,7 @@
   .msg
     = message.user.name
     = message.body
+    = message.image
     = message.updated_at
     = link_to "Edit", edit_group_message_path(message.group_id,message.id)
     / = link_to "Delete"

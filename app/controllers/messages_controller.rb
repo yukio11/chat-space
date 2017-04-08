@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
+
+before_action :set_message, only: [:edit, :update]
   def index
-    @messages = Message.all
+    @messages = Message.where(group_id: params[:group_id])
   end
 
   def show
@@ -19,6 +21,7 @@ class MessagesController < ApplicationController
   end
 
   def update
+    @message.update(message_params)
   end
 
   def delete
@@ -29,4 +32,8 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:body, :image, :group_id, :user_id).merge(group_id: params[:group_id], user_id: current_user.id)
   end
 
+  def set_message
+    @message = Message.find(params[:id])
+    @group = Group.find(params[:group_id])
+  end
 end
