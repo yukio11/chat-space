@@ -3,7 +3,7 @@
   .menu
     .menu__title
       %h2 #{@user.name}
-      = link_to new_group_path method: :get do
+      = link_to new_group_path do
         %i{class:"fa fa-pencil-square-o fa-2x fa-white"}
       = link_to edit_user_registration_path do
         %i{class:"fa fa-cog fa-2x fa-white"}
@@ -12,7 +12,7 @@
       .group
         - @groups.each do |group|
           %p.group__name
-            = group.name
+            = link_to "#{group.name}", group_path(group.id)
           %p.group__msg
             - if group.messages.empty?
               %p まだメッセージはありません
