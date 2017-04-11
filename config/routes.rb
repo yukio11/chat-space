@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :groups do
     resources :messages
   end
-  root "chat#index"
+  root "groups#index"
 end
