@@ -1,11 +1,8 @@
 class MessagesController < ApplicationController
 
-before_action :set_message, only: [:edit, :update, :destroy]
+  before_action :set_message, only: [:edit, :update, :destroy]
   def index
     @messages = Message.where(group_id: params[:group_id])
-  end
-
-  def show
   end
 
   def new
@@ -15,21 +12,18 @@ before_action :set_message, only: [:edit, :update, :destroy]
 
   def create
     @message = Message.create(message_params)
-    move_to_index
+    redirect_to group_messages_path
   end
 
-  def edit
-  end
 
   def update
     @message = @message.update(message_params)
     redirect_to group_messages_path
-    move_to_index
   end
 
   def destroy
     @message = @message.destroy
-    move_to_index
+    redirect_to group_messages_path
   end
 
   private
@@ -40,9 +34,5 @@ before_action :set_message, only: [:edit, :update, :destroy]
   def set_message
     @message = Message.find(params[:id])
     @group = Group.find(params[:group_id])
-  end
-
-  def move_to_index
-    redirect_to group_messages_path
   end
 end

@@ -10,14 +10,15 @@
 
     .menu__content
       .group
-        %p.group__name 神
-        %p.group__msg iiiii
-      .group
-        %p.group__name aaaaaaaa
-        %p.group__msg まだメッセージはありません
-      .group
-        %p.group__name sampleグループ
-        %p.group__msg まだメッセージはありません
+        - @groups.each do |group|
+          %p.group__name
+            = group.name
+          %p.group__msg
+            - if group.messages.empty?
+              %p まだメッセージはありません
+            - else
+              = group.messages.last.body
+
 
   .chat
     .chat__title

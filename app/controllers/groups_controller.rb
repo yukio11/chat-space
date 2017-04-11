@@ -2,9 +2,12 @@ class GroupsController < ApplicationController
 
   before_action :set_group, only:[:edit, :update]
 
+  def index
+    @user = current_user
+    @groups = current_user.groups
+  end
   def show
     @group = Group.find(params[:id])
-    @user = current_user
   end
   def new
     @group = Group.new
