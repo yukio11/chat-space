@@ -1,12 +1,4 @@
-
-*.log
-
-*.cache
-
-*.cache
-
-*.cache
-
-*.cache
-
-*.cache
+# Gitで以下のフォルダを無視する
+tmp/cache
+tmp/pids
+log/
