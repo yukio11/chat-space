@@ -10,7 +10,7 @@
     .group
       - @groups.each do |group|
         %p.group__name
-          = link_to "#{group.name}", group_messages_path("#{group.id}")
+          = link_to "#{group.name}", group_messages_path(group)
         %p.group__msg
           - if group.messages.empty?
             %p まだメッセージはありません
