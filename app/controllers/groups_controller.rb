@@ -6,14 +6,7 @@ class GroupsController < ApplicationController
     @user = current_user
     @groups = current_user.groups
   end
-  def show
-    @group = Group.find(params[:id])
-    @members = @group.users.map{|user| user[:name]}.join(' ')
-    @user = current_user
-    @groups = current_user.groups
-    @messages = @group.messages
-    @message = Message.new
-  end
+
   def new
     @group = Group.new
   end

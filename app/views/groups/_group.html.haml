@@ -7,7 +7,7 @@
     .title__edit
       %a
         %p
-          =link_to "EDIT", edit_group_path
+          = link_to "EDIT", edit_group_path(@group.id)
 
   .chat__content
     - @messages.each do |message|
