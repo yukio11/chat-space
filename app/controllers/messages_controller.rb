@@ -11,6 +11,9 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create(message_params)
+    unless @message.valid?
+      flash[:notice] = "メッセージを入力してください"
+    end
     redirect_to group_messages_path(params[:group_id])
   end
 
