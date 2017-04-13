@@ -1,4 +1,4 @@
-# Gitで以下のフォルダを無視する
-tmp/cache
+# Gitで以下のフォルダもしくはファイルを無視する
+*.cache
 tmp/pids
 log/
