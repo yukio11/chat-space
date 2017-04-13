@@ -1,0 +1,4 @@
+# Gitで以下のフォルダを無視する
+tmp/cache
+tmp/pids
+log/
