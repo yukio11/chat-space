@@ -10,7 +10,7 @@
           = link_to "EDIT", edit_group_path(@group.id)
 
   .chat__content
-    - @messages.each do |message|
+    - @group.messages.each do |message|
       .msg
         %p.msg__username
           = message.user.name
