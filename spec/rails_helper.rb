@@ -27,7 +27,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   #Inject the `request.env['warden']` object for me.
-  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
 
   #factory_girlの記法の省略
   config.include FactoryGirl::Syntax::Methods
