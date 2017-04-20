@@ -3,9 +3,6 @@ class MessagesController < ApplicationController
   def index
     @group = Group.find(params[:group_id])
     @members = @group.users.map{|user| user[:name]}.join(' ')
-    @user = current_user
-    @groups = current_user.groups
-    @messages = @group.messages
     @message = Message.new
   end
 

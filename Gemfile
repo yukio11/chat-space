@@ -62,6 +62,9 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'faker'
+  # Use assert_template.
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
