@@ -21,12 +21,14 @@ describe MessagesController do
       it "assigns the requested members to @members" do
         expect(assigns(:members)).to eq(group.users.map{|user| user[:name]}.join(' '))
       end
+
       it "renders the :index template" do
         expect(response).to render_template :index
       end
     end
 
     describe "when a user doesn't sign in" do
+
       it "redirects to user_session_path" do
         get :index, params: {group_id: group.id}
         expect(response).to redirect_to new_user_session_path
@@ -55,6 +57,7 @@ describe MessagesController do
       end
 
       describe "when the body is nil" do
+
         before do
           message = attributes_for(:message, body: nil, user_id: user.id, group_id: group.id)
           post :create, params:{message: message, group_id: group.id}
@@ -68,8 +71,8 @@ describe MessagesController do
           expect(flash[:notice]).not_to be_nil
         end
       end
-
     end
+
     describe "when a user doesn't sign in" do
       it "redirects to user_session_path" do
         message = attributes_for(:message, user_id: user.id, group_id: group.id)
