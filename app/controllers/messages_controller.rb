@@ -4,8 +4,6 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
     @members = @group.users.map{|user| user[:name]}.join(' ')
     @message = Message.new
-    @message.user_id = current_user.id
-
   end
 
   def create
@@ -22,7 +20,6 @@ class MessagesController < ApplicationController
       redirect_to group_messages_path(params[:group_id])
     end
   end
-
   private
   def message_params
     params.require(:message).permit(:body ,:image, :user_id).merge(group_id: params[:group_id])
