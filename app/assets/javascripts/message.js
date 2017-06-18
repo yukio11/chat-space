@@ -1,9 +1,12 @@
 $(function() {
   function new_message(message) {
+
+    var message_text = message.body.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    console.log(message_text);
     var new_message = $('<div class="msg">' +
                 '<p class="msg__username">'+ message.name +'</p>' +
                 '<p class="msg__time">'+ message.time + '<p>' +
-                '<p class ="msg__passage">' + message.body +'</p>' +
+                '<p class ="msg__passage">' + message_text +'</p>' +
                 '</div>');
     return new_message;
   }
@@ -11,15 +14,10 @@ $(function() {
   $('.msg_form').on('submit', function(e) {
     e.preventDefault();
     var api_url = window.location.pathname;
-    //リクエストのパスを取得
-    // var message = $('.form__textfield').val();
-    // var user_id = $('#message_user_id').val();
-    // var group_id = api_url.replace ( /[^\d.]/g, '' );
-
     var formdata = new FormData($(this).get(0));
-    // for(item of formdata) console.log(item);
+
     $.ajax({
-      url: api_url,
+      url: window.location.pathname,
       type: 'POST',
       data: formdata,
       contentType: false,
@@ -28,11 +26,11 @@ $(function() {
       cache: false
     })
 
-    .done(function(message){
-      console.log('success!');
-      console.log(message);
-      var html = new_message(message);
-      $('.msg').append(html);
+    .done(function(data){
+      console.log('success!!');
+      console.log(data);
+      var html = new_message(data);
+      $('.msgs').append(html);
       // 'chat__content'の末尾に'html'を加える
       $('.form__textfield').val('');
       //テキストフィールドを空にする
@@ -41,7 +39,7 @@ $(function() {
     })
 
     .fail(function(data){
-      console.log('error!');
+      alert('Asynchronous communication is not working properly!!');
     });
   });
 });
