@@ -2,7 +2,7 @@ $(function() {
   function new_message(message) {
 
     var message_text = message.body.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-    console.log(message_text);
+
     var new_message = $('<div class="msg">' +
                 '<p class="msg__username">'+ message.name +'</p>' +
                 '<p class="msg__time">'+ message.time + '<p>' +
@@ -27,8 +27,6 @@ $(function() {
     })
 
     .done(function(data){
-      console.log('success!!');
-      console.log(data);
       var html = new_message(data);
       $('.msgs').append(html);
       // 'chat__content'の末尾に'html'を加える
