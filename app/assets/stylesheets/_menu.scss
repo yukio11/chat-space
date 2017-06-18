@@ -1,9 +1,10 @@
 .menu {
   width: 260px;
-  height: calc(100vh - 30px);
+  height: 100%;
   float: left;
   color: #FFFFFF;
   background-color: #2f3e51;
+  overflow: scroll;
 
   .menu__title{
     background-color: #253141;
