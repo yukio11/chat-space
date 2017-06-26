@@ -1,6 +1,4 @@
 json.name @message.user.name
 json.body @message.body
 json.image @message.image
-json.group_id @message.group_id
-json.user_id @message.group_id
-json.time @message.created_at
+json.time published_on(@message) #ヘルパーメソッドを使用すれば、非同期時と通常リクエスト時も同様の表記にできる

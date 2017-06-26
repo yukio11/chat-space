@@ -33,6 +33,7 @@ $(function() {
       $('.form__textfield').val('');
       //テキストフィールドを空にする
       $('.form__submit').prop('disabled', false);
+      console.log('success!');
       ///送信ボタンを有効にする
     })
 

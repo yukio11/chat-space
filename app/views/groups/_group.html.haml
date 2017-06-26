@@ -16,7 +16,7 @@
           %p.msg__username
             = message.user.name
           %p.msg__time
-            = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
+            = published_on(message)
           %p.msg__passage
             = message.body
     = render "messages/form"
