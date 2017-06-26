@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
+  before_action :set_group, only: %i(index create)
 
   def index
-    @group = Group.find(params[:group_id])
     @members = @group.users.map{|user| user[:name]}.join(' ')
     @message = Message.new
   end
@@ -10,15 +10,20 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       respond_to do |format|
-        format.html {redirect_to group_messages_path(params[:group_id])}
+        format.html {redirect_to group_messages_path(@group)}
         format.json
       end
     else
       flash[:notice] = "メッセージを入力してください"
-      redirect_to group_messages_path(params[:group_id])
+      render :index
     end
   end
+
   private
+  def set_group
+    @group = Group.find(params[:group_id])
+  end
+
   def message_params
     params.require(:message).permit(:body ,:image).merge(group_id: params[:group_id], user_id: current_user.id)
   end
