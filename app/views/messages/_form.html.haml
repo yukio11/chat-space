@@ -1,7 +1,6 @@
-.msg_form
-  = form_for ([@group, @message]) do |f|
-    = f.text_field :body, autofocus: true, placeholder: "type a message", class: "form__textfield"
-    = link_to "#" do
-      %i{class:"fa fa-picture-o"}
-    = f.submit "Submit", class: "form__submit"
-
+= form_for [@group, @message], html: {class: 'msg_form'} do |f|
+  = f.hidden_field :user_id, value: "#{current_user}"
+  = f.text_field :body, autofocus: true, placeholder: "type a message", class: "form__textfield"
+  = link_to "#" do
+    %i{class:"fa fa-picture-o"}
+  = f.submit "Submit", class: "form__submit"
