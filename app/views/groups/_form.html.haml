@@ -11,6 +11,7 @@
       .chat-group-form__search
       = f.text_field :name, placeholder: '追加したいユーザー名を入力してください', id: 'chat_users', class: 'chat-group-form__input search_users' , autofocus: true
       #user-search-result
+        %ul.user-search-result
     .chat-group-form__field--left
       = f.label "チャットメンバー" , class: "chat-group-form__label"
     .chat-group-form__field--right

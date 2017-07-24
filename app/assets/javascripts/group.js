@@ -1,6 +1,6 @@
 $(function(){
 
-  var search_list = $("#user-search-result");
+  var search_list = $("ul.user-search-result");
 
   function appendUser(user){
     var html = `<li>${ user.name }</li>`
@@ -27,7 +27,7 @@ $(function(){
 // 参考 http://js.studio-kingdom.com/jquery/ajax/ajax
 
     .done(function(users){
-      $("#user-search-result").empty();
+      $("ul.user-search-result").empty();
       if (users.length !== 0){
         users.forEach(function(user){
           appendUser(user);
