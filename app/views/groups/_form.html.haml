@@ -9,8 +9,12 @@
       = f.label "チャットメンバーを追加" , class: "chat-group-form__label"
     .chat-group-form__field--right
       .chat-group-form__search
-        = f.collection_check_boxes(:user_ids, User.all, :id, :name)
+      = f.text_field :name, placeholder: '追加したいユーザー名を入力してください', id: 'chat_users', class: 'chat-group-form__input search_users' , autofocus: true
       #user-search-result
+    .chat-group-form__field--left
+      = f.label "チャットメンバー" , class: "chat-group-form__label"
+    .chat-group-form__field--right
+      選択されたメンバーが表示
   .chat-group-form__field
     .chat-group-form__field--left
     .chat-group-form__field--right
