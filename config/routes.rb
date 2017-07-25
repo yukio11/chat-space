@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :messages, only:[:index, :create]
   end
   root "groups#index"
+  post 'users/search', to: 'users#search'
 end
